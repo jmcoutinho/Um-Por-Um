@@ -17,8 +17,8 @@ function positionLogo() {
         
         var rotation = (Math.random()*90)-45;
         var arrangement = Math.floor(Math.random()*4)-2;
-        var placeX = Math.random()*bodyX;
-        var placeY = Math.random()*bodyY;
+        var placeX = Math.random()*(bodyX - logoShapes[i].getBoundingClientRect().width);
+        var placeY = Math.random()*(bodyY - logoShapes[i].getBoundingClientRect().height);
         
         logoShapes[i].style.left = placeX + 'px';
         logoShapes[i].style.top = placeY + 'px';
