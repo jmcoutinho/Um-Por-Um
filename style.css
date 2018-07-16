@@ -46,7 +46,7 @@ em {
 }
 
 .page:last-of-type {
-    border: none;
+    border-style: none;
 }
 
 .spread/*, .logo-shape*/ {
@@ -79,4 +79,28 @@ em {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/*Mobile*/
+
+@media screen and (max-width: 800px)  {
+    
+    .spread {
+        border-style: none;
+        display: block;
+        margin: 0;
+        box-shadow: none;
+    }
+    
+    .page, .page:last-of-type {
+        border-style: solid;
+        margin: 20px 0 100px 0;
+        box-shadow: 2px 7px 20px hsla(0, 0%, 0%, 0.15);
+        
+    }
+    
+    .logo-shape {
+        display: none;
+    }
+    
 }
