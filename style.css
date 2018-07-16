@@ -8,6 +8,7 @@ body{
     margin: 0;
     font: 700 18px 'Karla', Helvetica, Sans-serif;
     line-height: 1.33em;
+    background: hsl(0, 0%, 98%);
 }
 
 h1 {
@@ -42,11 +43,18 @@ em {
     height: 422px;
     padding: 1.2em;
     
-    overflow: hidden;
+    overflow: scroll;
+    
+    display: flex;
+    flex-direction: column;
 }
 
 .page:last-of-type {
     border-style: none;
+}
+
+.page-bottom {
+    margin-top: auto;
 }
 
 .spread/*, .logo-shape*/ {
@@ -54,7 +62,7 @@ em {
 }
 
 .logo-shape {
-    background: white;
+    background: hsl(0, 0%, 98%);
     border-style: solid;
     border-color: black;
     
@@ -64,14 +72,14 @@ em {
 }
 
 .ls-rect {
-    width: 57px;
-    height: 222px;
+    width: 65px;
+    height: 260px;
 }
 
 .ls-circle {
     border-radius: 50%;
-    width: 110px;
-    height: 110px;
+    width: 130px;
+    height: 130px;
 }
 
 #main-wrapper {

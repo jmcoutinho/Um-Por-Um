@@ -1,8 +1,8 @@
-function rotateSpreads() {
-    var spreads = document.getElementsByClassName('spread');
-    for (i = 0; i < spreads.length; i++) {
-        var rotation = (Math.random()*5)-2.5;
-        spreads[i].style.transform = 'rotate(' + rotation + 'deg)';
+function rotateClass(className, rotationMax) {
+    var classElements = document.getElementsByClassName(className);
+    for (i = 0; i < classElements.length; i++) {
+        var rotation = (Math.random() * 2 * rotationMax) - rotationMax;
+        classElements[i].style.transform = 'rotate(' + rotation + 'deg)';
     }
 }
 
@@ -14,16 +14,15 @@ function positionLogo() {
         var bodyX = b.clientWidth;
         var bodyY = b.clientHeight;
         
-        var rotation = (Math.random()*90)-45;
         var arrangement = Math.floor(Math.random()*4)-2;
         var placeX = Math.random()*(bodyX - logoShapes[i].getBoundingClientRect().width);
         var placeY = Math.random()*(bodyY - logoShapes[i].getBoundingClientRect().height);
         
         logoShapes[i].style.left = placeX + 'px';
         logoShapes[i].style.top = placeY + 'px';
-        logoShapes[i].style.transform = 'rotate(' + rotation + 'deg)';
         logoShapes[i].style.zIndex = 10 + arrangement;
     }
+    rotateClass('logo-shape', 45);
 }
 
 /*from w3schools*/
@@ -62,8 +61,13 @@ function dragElement(elmnt) {
     }
 }
 
+var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
-rotateSpreads();
+if(windowWidth < 800) {
+    rotateClass('page', 2.5);
+} else {
+    rotateClass('spread', 2.5);
+}
 positionLogo();
 for (i = 0; i < document.getElementsByClassName('logo-shape').length; i++) {
     dragElement(document.getElementsByClassName('logo-shape')[i]);
