@@ -8,7 +8,6 @@ body{
     margin: 0;
     font: 700 18px 'Karla', Helvetica, Sans-serif;
     line-height: 1.33em;
-    background: hsl(0, 0%, 98%);
 }
 
 h1 {
@@ -62,7 +61,7 @@ em {
 }
 
 .logo-shape {
-    background: hsl(0, 0%, 98%);
+    background: white;
     border-style: solid;
     border-color: black;
     
@@ -97,7 +96,7 @@ em {
         border-style: none;
         display: block;
         margin: 0;
-        /*box-shadow: none;*/
+        box-shadow: none;
     }
     
     .page, .page:last-of-type {
