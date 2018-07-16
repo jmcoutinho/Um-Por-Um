@@ -102,6 +102,7 @@ em {
     
     .page, .page:last-of-type {
         border-style: solid;
+        border-radius: 2px;
         margin: 20px 0 100px 0;
         box-shadow: 2px 7px 20px hsla(0, 0%, 0%, 0.15);
         
