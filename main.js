@@ -74,6 +74,7 @@ for (i = 0; i < document.getElementsByClassName('logo-shape').length; i++) {
 }
 
 $('.revealer').click(function () {
+    $(this).parent().css('overflow-x', 'scroll');
     $(this).hide();
     $(this).siblings('.revealed').show();
     $(this).siblings('.hider').show();
@@ -81,6 +82,7 @@ $('.revealer').click(function () {
 });
 
 $('.hider').click(function () {
+    $(this).parent().css('overflow-x', 'visible');
     $(this).hide();
     $(this).siblings('.revealed').hide();
     $(this).siblings('.revealer').show();

@@ -77,8 +77,6 @@ a:hover {
     width: 299px;
     height: 422px;
     padding: 1.2em;
-    
-    overflow: scroll;
 }
 
 .page-aligner {
@@ -88,10 +86,6 @@ a:hover {
 
 .page:last-of-type {
     border-style: none;
-}
-
-.page::-webkit-scrollbar { 
-    display: none;
 }
 
 .page-bottom {
