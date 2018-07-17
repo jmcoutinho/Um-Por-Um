@@ -66,6 +66,10 @@ a:hover {
     border-style: none;
 }
 
+.page::-webkit-scrollbar { 
+    display: none;
+}
+
 .page-bottom {
     margin-top: auto;
 }
