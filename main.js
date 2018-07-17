@@ -72,3 +72,18 @@ positionLogo();
 for (i = 0; i < document.getElementsByClassName('logo-shape').length; i++) {
     dragElement(document.getElementsByClassName('logo-shape')[i]);
 }
+
+
+$('.revealer').click(function () {
+    $(this).hide();
+    $(this).siblings('.revealed').show();
+    $(this).siblings('.hider').show();
+    return false;
+});
+
+$('.hider').click(function () {
+    $(this).hide();
+    $(this).siblings('.revealed').hide();
+    $(this).siblings('.revealer').show();
+    return false;
+});

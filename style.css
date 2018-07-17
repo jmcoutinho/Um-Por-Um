@@ -17,12 +17,24 @@ h1 {
 }
 
 p {
-    margin: 0;
+    margin: 0 0 1em 0;
 }
 
 em {
     font-style: normal;
     color: #93d7ec;
+}
+
+a {
+    text-decoration: none;
+    color: #93d7ec;
+    transition: 0.2s;
+}
+
+a:hover {
+    background: #93d7ec;
+    color: white;
+    box-shadow: 2px 7px 20px hsla(0, 0%, 0%, 0.15);
 }
 
 .spread {
@@ -43,7 +55,9 @@ em {
     padding: 1.2em;
     
     overflow: scroll;
-    
+}
+
+.page-aligner {
     display: flex;
     flex-direction: column;
 }
@@ -79,6 +93,25 @@ em {
     border-radius: 50%;
     width: 130px;
     height: 130px;
+}
+
+.button {
+    border-style: solid;
+    border-radius: 1em;
+    padding: 0 .4em;
+    margin: 0 0 1em 0;
+    display: inline-block;
+    color: #93d7ec;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: white;
+    color: #93d7ec;
+}
+
+.revealed {
+    transition: 0.2s;
 }
 
 #main-wrapper {
