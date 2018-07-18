@@ -130,6 +130,7 @@ a:hover {
 .button:hover {
     background-color: white;
     color: #93d7ec;
+    transform: scale(1.01, 1.01);
 }
 
 .revealed {

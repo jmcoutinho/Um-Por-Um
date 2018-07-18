@@ -1,27 +1,65 @@
-function rotateClass(className, rotationMax) {
-    var classElements = document.getElementsByClassName(className);
-    for (i = 0; i < classElements.length; i++) {
-        var rotation = (Math.random() * 2 * rotationMax) - rotationMax;
-        classElements[i].style.transform = 'rotate(' + rotation + 'deg)';
+window.onload = function() {
+    responseRotate();
+    $(window).resize(responseRotate);
+	
+	positionLogo();
+	
+	$(".logo-shape").each(function (index, element) {
+		dragElement(element);
+	});
+	
+    $(".revealer").click(function () {
+        $(this).parent().css('overflow-x', 'scroll');
+        $(this).hide();
+        $(this).siblings('.revealed').show();
+        $(this).siblings('.hider').show();
+        return false;
+    });
+
+    $(".hider").click(function () {
+        $(this).parent().css('overflow-x', 'visible');
+        $(this).hide();
+        $(this).siblings('.revealed').hide();
+        $(this).siblings('.revealer').show();
+        return false;
+    });
+}
+
+function responseRotate(){
+    if ($(".spread").css("display") == "block" ){
+		rotateClass("spread", 0);
+        rotateClass("page", 2.5);
+    } else {
+		rotateClass("page", 0);
+        rotateClass("spread", 2.5);
     }
 }
 
-function positionLogo() {
-    var logoShapes = document.getElementsByClassName('logo-shape');
-    
-    for (i = 0; i < logoShapes.length; i++) {
-        var b = document.getElementsByTagName('body')[0];
-        var bodyX = b.clientWidth;
-        var bodyY = b.clientHeight;
-        
-        var arrangement = Math.floor(Math.random()*4)-2;
-        var placeX = Math.random()*(bodyX - logoShapes[i].getBoundingClientRect().width);
-        var placeY = Math.random()*(bodyY - logoShapes[i].getBoundingClientRect().height);
-        
-        logoShapes[i].style.left = placeX + 'px';
-        logoShapes[i].style.top = placeY + 'px';
-        logoShapes[i].style.zIndex = 10 + arrangement;
-    }
+var rpr = [];
+$(".page").each(function() {
+    rpr.push(Math.random());
+});
+function rotateClass(className, rotationMax) {
+	var i = 0;
+	$("." + className).each(function() {
+		var rotation = (rpr[i] * 2 * rotationMax) - rotationMax;
+		$(this).css("transform", "rotate(" + rotation + "deg)");
+		i += 1;
+	});
+}
+
+function positionLogo() {	
+	$(".logo-shape").each(function () {
+		var posx = (Math.random() * ($(document).width() - $(this).width())).toFixed(),
+			posy = (Math.random() * ($(document).height() - $(this).height())).toFixed(),
+			posz = (10 + (Math.floor(Math.random() * 4) - 2)).toFixed();
+		
+		$(this).css({
+			'left':posx+'px',
+        	'top':posy+'px',
+			'z-index':posz
+		});
+	});
     rotateClass('logo-shape', 45);
 }
 
@@ -60,31 +98,3 @@ function dragElement(elmnt) {
         document.onmousemove = null;
     }
 }
-
-var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-
-if(windowWidth < 800) {
-    rotateClass('page', 2.5);
-} else {
-    rotateClass('spread', 2.5);
-}
-positionLogo();
-for (i = 0; i < document.getElementsByClassName('logo-shape').length; i++) {
-    dragElement(document.getElementsByClassName('logo-shape')[i]);
-}
-
-$('.revealer').click(function () {
-    $(this).parent().css('overflow-x', 'scroll');
-    $(this).hide();
-    $(this).siblings('.revealed').show();
-    $(this).siblings('.hider').show();
-    return false;
-});
-
-$('.hider').click(function () {
-    $(this).parent().css('overflow-x', 'visible');
-    $(this).hide();
-    $(this).siblings('.revealed').hide();
-    $(this).siblings('.revealer').show();
-    return false;
-});
