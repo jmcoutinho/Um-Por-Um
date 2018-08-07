@@ -9,22 +9,21 @@ window.onload = function() {
 	
 	positionLogo();
 	
-    $(".revealer").click(function () {
-        $(this).parent().css('overflow-x', 'scroll');
-        $(this).hide();
-        $(this).siblings('.revealed').show();
-        $(this).siblings('.hider').show();
-        return false;
+	$(".revealer").click(function () {
+		var $this = $(this);
+		if($(this).siblings(".revealed").css("display") == "none") {
+			$(this).parent().css("overflow-y", "scroll");
+			$(this).siblings('.revealed').slideToggle(100);
+			setTimeout(function() {
+				$this.text("Read less");	
+			}, 200);
+		} else {
+			$(this).text("Read more");
+			$(this).siblings(".revealed").hide();
+			$(this).parent().css("overflow-y", "visible")
+		}
     });
 
-    $(".hider").click(function () {
-        $(this).parent().css('overflow-x', 'visible');
-        $(this).hide();
-        $(this).siblings('.revealed').hide();
-        $(this).siblings('.revealer').show();
-        return false;
-    });
-	
 }
 
 function responseRotate(){

@@ -129,6 +129,16 @@ a:hover {
     display: inline-block;
     color: #93d7ec;
     cursor: pointer;
+	max-width: 100%;
+	box-sizing: border-box;
+	display: inline-flex;
+	align-items: center;
+}
+
+.button *{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin: 0;
 }
 
 .button:hover {
@@ -151,6 +161,11 @@ a:hover {
 #ls-wrapper {
 	position: absolute;
 	top: 0;
+}
+
+#pdf-symbol{
+	padding-right: .3em;
+	height: 1.2em;
 }
 
 /*Mobile*/
