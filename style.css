@@ -44,6 +44,10 @@ p {
     margin: 0 0 1em 0;
 }
 
+p:last-child {
+	margin-bottom: 0;
+}
+
 em {
     font-style: normal;
     color: #93d7ec;
@@ -166,6 +170,21 @@ a:hover {
 #pdf-symbol{
 	padding-right: .3em;
 	height: 1.2em;
+}
+
+#signature-wrapper {
+	display: flex;
+}
+
+#signature {
+	font-size: .6em;
+	line-height: normal;
+}
+
+#logo {
+	height:2.1em;
+	margin-right: 1.3em;
+	float: left;
 }
 
 /*Mobile*/
