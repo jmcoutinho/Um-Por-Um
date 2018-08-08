@@ -63,6 +63,7 @@ a:hover {
     background: #93d7ec;
     color: white;
     box-shadow: 2px 7px 20px hsla(0, 0%, 0%, 0.15);
+	transform: scale(2, 2);
 }
 
 .spread {
@@ -94,6 +95,7 @@ a:hover {
 
 .page-bottom {
     margin-top: auto;
+	display: inline-block;
 }
 
 .spread/*, .logo-shape*/ {
@@ -139,7 +141,7 @@ a:hover {
 	align-items: center;
 }
 
-.button *{
+.button p*{
 	overflow: hidden;
 	text-overflow: ellipsis;
 	margin: 0;
